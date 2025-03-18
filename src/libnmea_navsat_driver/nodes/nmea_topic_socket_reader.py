@@ -105,7 +105,7 @@ def main():
     server = socketserver.UDPServer((local_ip, local_port), NMEAMessageHandler,
                                     bind_and_activate=False)
     server.frame_id = RosNMEADriver.get_frame_id()
-    server.publisher = nmea_pub()
+    server.publisher = nmea_pub
 
     # Start listening for connections
     server.server_bind()

@@ -57,7 +57,7 @@ class NMEAMessageHandler(socketserver.DatagramRequestHandler):
                 nmea_str = line.decode('ascii')
                 sentence = Sentence()
                 sentence.header.stamp = rospy.get_rostime()
-                sentence.header.frame_id = frame_id
+                sentence.header.frame_id = self.frame_id
                 self.publsher.publish(sentence)
             except UnicodeError as e:
                 rospy.logwarn("Skipped reading a line from the UDP socket because it could not be "

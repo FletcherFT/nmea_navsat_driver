@@ -99,8 +99,6 @@ def main():
     except KeyError as e:
         rospy.logerr("Parameter %s not found" % e)
         sys.exit(1)
-    rospy.init_node('nmea_topic_serial_reader')
-
     nmea_pub = rospy.Publisher("nmea_sentence", Sentence, queue_size=1)
 
     # Create a socket

@@ -19,6 +19,7 @@ install(PROGRAMS
    scripts/nmea_socket_driver
    scripts/nmea_topic_driver
    scripts/nmea_topic_serial_reader
+   scripts/nmea_topic_socket_reader
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

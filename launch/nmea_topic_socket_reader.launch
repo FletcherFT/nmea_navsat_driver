@@ -1,0 +1,15 @@
+<launch>
+
+  <!-- A simple launch file for the nmea_topic_socket_reader node. -->
+
+  <arg name="port" default="10110" />
+  <arg name="ip" default="0.0.0.0" />
+  <arg name="frame_id" default="gps" />
+
+  <node name="nmea_topic_socket_reader_node" pkg="nmea_navsat_driver" type="nmea_topic_socket_reader" output="screen">
+    <param name="port" value="$(arg port)"/>
+    <param name="ip" value="$(arg ip)" />
+    <param name="frame_id" value="$(arg frame_id)" />
+  </node>
+
+</launch>

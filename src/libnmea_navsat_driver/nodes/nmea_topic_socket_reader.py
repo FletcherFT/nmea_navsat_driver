@@ -32,11 +32,18 @@
 
 """Defines the main method for the nmea_topic_serial_reader executable."""
 
-import serial
+import select
+import sys
+import traceback
 
-from nmea_msgs.msg import Sentence
+try:
+    import socketserver
+except ImportError:
+    import SocketServer as socketserver  # Python 2.7
+
 import rospy
 
+from nmea_msgs.msg import Sentence
 from libnmea_navsat_driver.driver import RosNMEADriver
 
 class NMEAMessageHandler(socketserver.DatagramRequestHandler):
